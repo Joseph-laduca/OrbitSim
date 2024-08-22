@@ -7,7 +7,7 @@ def update_plot(frame, positions, velocities, sunMass, G, deltaT):
     x, y = positions
     vx, vy = velocities
     
-    # Calculate the distance between the Earth and the Sun
+    # Calculate the distance between the planet and the Sun
     r = math.sqrt(x**2 + y**2)
     
     # Calculate the force due to gravity
@@ -32,19 +32,19 @@ def update_plot(frame, positions, velocities, sunMass, G, deltaT):
     # Clear the plot and replot the points
     plt.clf()
     plt.plot(0, 0, marker="o", markersize=20, markeredgecolor="yellow", markerfacecolor="yellow")  # Sun
-    plt.plot(x, y, marker="o", markersize=10, markeredgecolor="blue", markerfacecolor="green")  # Earth
+    plt.plot(x, y, marker="o", markersize=10, markeredgecolor="blue", markerfacecolor="green")  # planet
     plt.gca().axes.xaxis.set_visible(False)
     plt.gca().axes.yaxis.set_visible(False)
     plt.xlim(-1.6e11, 1.6e11)
     plt.ylim(-1.6e11, 1.6e11)
     plt.gca().set_aspect('equal', adjustable='box')
-    plt.title("Planet orbit around a sun")
+    plt.title("Planet orbiting around a sun")
     
     return plt
 
 def velocitySim():
     # Initial conditions
-    x = 1.5146 * 10**11  # Initial position of Earth (meters)
+    x = 1.5146 * 10**11  # Initial position of planet (meters)
     y = 0
     sunMass = 1.9891 * 10**30  # Mass of the Sun (kg)
     G = 6.67430 * 10**-11  # Gravitational constant (m^3 kg^-1 s^-2)
